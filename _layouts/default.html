@@ -61,6 +61,43 @@
                     Pages</a>.</span>
         </footer>
     </main>
+
+    <script>
+    (function() {
+        const isNarrow = () => window.innerWidth <= parseFloat(getComputedStyle(document.documentElement).fontSize) * 76;
+        const btn = document.querySelector('.back-button');
+        if (!btn) return;
+
+        let lastY = window.scrollY;
+        let ticking = false;
+
+        function updateButton() {
+            const currentY = window.scrollY;
+            if (!isNarrow()) {
+                btn.classList.remove('hidden');
+            } else if (currentY <= 10) {
+                btn.classList.remove('hidden');
+            } else if (currentY > lastY) {
+                btn.classList.add('hidden');
+            } else {
+                btn.classList.remove('hidden');
+            }
+            lastY = currentY;
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(updateButton);
+                ticking = true;
+            }
+        }, { passive: true });
+
+        window.addEventListener('resize', function() {
+            if (!isNarrow()) btn.classList.remove('hidden');
+        }, { passive: true });
+    })();
+    </script>
 </body>
 
 </html>

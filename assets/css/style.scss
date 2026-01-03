@@ -216,7 +216,7 @@ body {
   font-size: 14px;
   font-weight: 500;
   backdrop-filter: blur(8px);
-  transition: all 0.2s ease;
+  transition: all 0.2s ease, transform 0.3s ease, opacity 0.3s ease;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -231,5 +231,17 @@ body {
     background-color: rgba(25, 30, 35, 0.9);
     border-color: rgba(255, 255, 255, 0.4);
     text-decoration: none;
+  }
+
+  &.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 76rem) {
+  .main-content {
+    padding-top: 60px !important;
   }
 }
