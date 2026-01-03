@@ -1,0 +1,203 @@
+---
+---
+
+// Dark mode color variables - override Cayman defaults
+$header-heading-color: #f0f0f0 !default;
+$header-bg-color: #6c3d8f !default;
+$header-bg-color-secondary: #2a1a4a !default;
+
+$section-headings-color: #a78bfa !default;
+$body-text-color: #c9d1d9 !default;
+$body-link-color: #8b9cf4 !default;
+$blockquote-text-color: #8b949e !default;
+
+$code-bg-color: #161b22 !default;
+$code-text-color: #79c0ff !default;
+
+$border-color: #30363d !default;
+$table-border-color: #30363d !default;
+$hr-border-color: #21262d !default;
+
+@import "{{ site.theme }}";
+
+// Force dark mode styles
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #0d1117 !important;
+  color: $body-text-color !important;
+}
+
+// Main content area
+.main-content {
+  background-color: #0d1117;
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #e6edf3 !important;
+  }
+  
+  a {
+    color: $body-link-color !important;
+    
+    &:hover {
+      color: #a5b4fc !important;
+    }
+  }
+  
+  // Code blocks
+  code {
+    background-color: #161b22 !important;
+    color: #79c0ff !important;
+    border: 1px solid #30363d;
+  }
+  
+  pre {
+    background-color: #161b22 !important;
+    border-color: #30363d !important;
+    
+    code {
+      border: none;
+    }
+  }
+  
+  // Keyboard styling
+  kbd {
+    background-color: #21262d !important;
+    border-color: #30363d !important;
+    border-bottom-color: #484f58 !important;
+    box-shadow: inset 0 -1px 0 #484f58 !important;
+    color: #c9d1d9 !important;
+  }
+  
+  // Blockquote
+  blockquote {
+    color: #8b949e !important;
+    border-left-color: #6c3d8f !important;
+  }
+  
+  // Tables
+  table {
+    th, td {
+      border-color: #30363d !important;
+    }
+    
+    th {
+      background-color: #161b22;
+      color: #e6edf3;
+    }
+    
+    tr {
+      background-color: #0d1117;
+      
+      &:nth-child(even) {
+        background-color: #161b22;
+      }
+    }
+  }
+  
+  // Horizontal rule
+  hr {
+    background-color: #21262d !important;
+  }
+  
+  // Images
+  img {
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+}
+
+// Syntax highlighting overrides for dark mode (Rouge github style)
+.highlight {
+  background-color: #161b22 !important;
+  
+  .c, .c1, .cm, .cs { color: #8b949e !important; } // Comments
+  .k, .kd, .kn, .kp, .kr, .kt { color: #ff7b72 !important; } // Keywords
+  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx { color: #a5d6ff !important; } // Strings
+  .na, .nb, .nc, .nd, .ne, .nf, .nl, .nn { color: #d2a8ff !important; } // Names
+  .no, .nv, .vc, .vg, .vi { color: #ffa657 !important; } // Variables
+  .m, .mi, .mf, .mh, .mo { color: #79c0ff !important; } // Numbers
+  .o, .ow { color: #c9d1d9 !important; } // Operators
+  .p { color: #c9d1d9 !important; } // Punctuation
+  .err { color: #f85149 !important; } // Errors
+}
+
+// Page header dark mode
+.page-header {
+  background-image: linear-gradient(120deg, #2a1a4a, #6c3d8f) !important;
+  
+  .project-name {
+    color: #f0f0f0 !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  .project-tagline {
+    color: rgba(240, 240, 240, 0.8) !important;
+  }
+  
+  .btn {
+    color: rgba(255, 255, 255, 0.8) !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(4px);
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+      border-color: rgba(255, 255, 255, 0.4) !important;
+    }
+  }
+}
+
+// Site footer dark mode
+.site-footer {
+  border-top-color: #21262d !important;
+  
+  .site-footer-owner {
+    color: #e6edf3 !important;
+  }
+  
+  .site-footer-credits {
+    color: #8b949e !important;
+  }
+}
+
+// Selection styling
+::selection {
+  background-color: rgba(108, 61, 143, 0.4);
+  color: #fff;
+}
+
+// Scrollbar styling
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+  
+  &:hover {
+    background: #484f58;
+  }
+}
+
+// Custom utility classes
+.page-header {
+    display: none !important;
+}
+
+.site-footer {
+    display: none !important;
+}
+
+.big-text {
+    font-size: 36px !important;
+    color: #ff6b6b !important;
+}
