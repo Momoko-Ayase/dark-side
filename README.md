@@ -3,7 +3,7 @@
 ## Content / 内容
 
 - [Akira \| 这是一个🍉条](./content/akira)
-<!-- - [Chiyoda](./content/chiyoda/) -->
+- [Chiyoda \| 另一个🍉条](./content/chiyoda/)
 <!-- - [wvb变质论 - 这里到底变成了什么地方？](./content/wvb)-->
 
 ## About / 这里为什么存在？
